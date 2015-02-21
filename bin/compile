@@ -59,6 +59,11 @@ if [[ -f Staticfile.auth ]]; then
   protip "Learn about basic authentication" "https://github.com/drnic/staticfile-buildpack#basic-authentication"
 fi
 
+
+resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
+status "Sabith $resolver"
+
+
 # Enable directory index
 if [[ "$(grep directory: Staticfile)X" != "X" ]]; then
   status "Enabling directory index for folders without index.html files"
