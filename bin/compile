@@ -70,6 +70,9 @@ if [[ "$(grep directory: Staticfile)X" != "X" ]]; then
   touch nginx/conf/.enable_directory_index
 fi
 
+resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
+status "Sabith $resolver"
+
 # [[ -f public/Procfile ]] && mv public/Procfile .
 # echo "-----> Ensuring manifest.yml & stackato.yml aren't available in public/"
 # rm -f public/{manifest,stackato}.yml
