@@ -62,7 +62,7 @@ fi
 
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 status "TEST  $resolver $build_dir";
-echo $resolver > /tmp/resolver;
+echo $resolver > $build_dir/resolver;
 
 
 # Enable directory index
