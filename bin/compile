@@ -59,10 +59,9 @@ if [[ -f Staticfile.auth ]]; then
   protip "Learn about basic authentication" "https://github.com/drnic/staticfile-buildpack#basic-authentication"
 fi
 
-
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 status "TEST  $resolver $build_dir";
-echo $resolver > $build_dir/resolver;
+echo $resolver > nginx/conf/.resolver;
 
 
 # Enable directory index
