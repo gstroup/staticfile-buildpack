@@ -61,7 +61,8 @@ fi
 
 
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
-status "Sabith $resolver"
+status "TEST  $resolver";
+export RESOLVER $resolver;
 
 
 # Enable directory index
