@@ -61,7 +61,7 @@ fi
 
 
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
-status "TEST  $resolver";
+status "TEST  $resolver $build_dir";
 echo $resolver > /tmp/resolver;
 
 
