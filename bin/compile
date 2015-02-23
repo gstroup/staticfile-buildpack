@@ -59,7 +59,7 @@ if [[ -f Staticfile.auth ]]; then
   protip "Learn about basic authentication" "https://github.com/drnic/staticfile-buildpack#basic-authentication"
 fi
 
-resolver=$(cat /etc/resolv.conf | grep -v "^#" | awk  '{print $NF}' | tr '\n' ' ')
+resolver=$(cat /etc/resolv.conf | grep -v "ec2.internal" | grep -v "^#" | awk  '{print $NF}' | tr '\n' ' ')
 status "TEST  $resolver $build_dir";
 echo $resolver > nginx/conf/.resolver;
 
