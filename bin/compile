@@ -63,6 +63,8 @@ resolver=$(cat /etc/resolv.conf | grep -v "ec2.internal" | grep -v "^#" | awk  '
 status "TEST  $resolver $build_dir";
 echo $resolver > nginx/conf/.resolver;
 
+status $(ls $(dirname $(which erb)))
+
 
 # Enable directory index
 if [[ "$(grep directory: Staticfile)X" != "X" ]]; then
