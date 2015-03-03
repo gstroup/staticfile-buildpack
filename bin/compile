@@ -65,6 +65,7 @@ echo $resolver > nginx/conf/.resolver;
 
 status $(ls $(dirname $(which erb)))
 status $(gem list)
+status $(env)
 
 
 # Enable directory index
