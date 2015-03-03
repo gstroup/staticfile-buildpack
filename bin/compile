@@ -71,8 +71,7 @@ if [[ "$(grep directory: Staticfile)X" != "X" ]]; then
 fi
 
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
-env >> /tmp/env.log
-cat /tmp/env.log
+status $(jq ".cleardb[0].name" $VCAP_SERVICES)
 
 # [[ -f public/Procfile ]] && mv public/Procfile .
 # echo "-----> Ensuring manifest.yml & stackato.yml aren't available in public/"
