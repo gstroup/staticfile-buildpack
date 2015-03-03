@@ -62,9 +62,6 @@ fi
 resolver=$(cat /etc/resolv.conf | grep -v "ec2.internal" | grep -v "^#" | awk  '{print $NF}' | tr '\n' ' ')
 status "TEST  $resolver $build_dir";
 echo $resolver > nginx/conf/.resolver;
-sudo apt-get update
-sudo apt-get install -fy jq
-status "test --> " $(jq ".cleardb[0].name" $VCAP_SERVICES)
 
 
 # Enable directory index
