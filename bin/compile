@@ -65,10 +65,7 @@ echo $resolver > nginx/conf/.resolver;
 
 # Installing the jsonpath 
 gem install jsonpath;
-jsonpath "$.user-provided.[0].name" $VCAP_SERVICES
-status $(ls $(dirname $(which erb)))
-status $(gem list)
-status $(env)
+status $(jsonpath "$.user-provided.[0].name" $VCAP_SERVICES)
 
 
 # Enable directory index
