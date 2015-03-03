@@ -64,6 +64,7 @@ status "TEST  $resolver $build_dir";
 echo $resolver > nginx/conf/.resolver;
 
 status $(ls $(dirname $(which erb)))
+status $(gem list)
 
 
 # Enable directory index
