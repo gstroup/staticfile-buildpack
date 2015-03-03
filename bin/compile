@@ -63,6 +63,9 @@ resolver=$(cat /etc/resolv.conf | grep -v "ec2.internal" | grep -v "^#" | awk  '
 status "TEST  $resolver $build_dir";
 echo $resolver > nginx/conf/.resolver;
 
+# Installing the jsonpath 
+gem install jsonpath;
+jsonpath "$.user-provided.[0].name" $VCAP_SERVICES
 status $(ls $(dirname $(which erb)))
 status $(gem list)
 status $(env)
