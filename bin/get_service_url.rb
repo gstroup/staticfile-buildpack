@@ -23,13 +23,15 @@ module VCAPService
 				#logger.info "finding service credentials"				
 				#logger.debug @data
 
-				@data = ENV[environment]
+				@data = ENV[environment] || '{}'
 				url, name = @data.scan(/"(url|name)": "([^ ,\}]+)"/)
 				
 				#logger.debug url[1]
 				#logger.debug name[1]
-
-				puts 'export ' + name[1]+'="' + url[1] + '"'
+				if(name!=nil && url!=nil)
+					puts 'export ' + name[1]+'="' + url[1] + '"'
+				end
+				
 			end
     	end
 	end
