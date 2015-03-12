@@ -60,7 +60,7 @@ if [[ -f Staticfile.auth ]]; then
 fi
 
 resolver=$(cat /etc/resolv.conf | grep -v "ec2.internal" | grep -v "^#" | awk  '{print $NF}' | tr '\n' ' ')
-status "TEST  $resolver $build_dir";
+status "TEST  "env;
 echo $resolver > nginx/conf/.resolver;
 
 # Enable directory index
