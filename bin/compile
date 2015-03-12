@@ -64,6 +64,7 @@ status "TEST  $resolver $build_dir";
 echo $resolver > nginx/conf/.resolver;
 
 status $(which perl)
+status $(perl -MJSON::Path -e "print \"Module installed.\\n\";")
 
 
 # Enable directory index
