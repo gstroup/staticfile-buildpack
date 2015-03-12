@@ -63,8 +63,6 @@ resolver=$(cat /etc/resolv.conf | grep -v "ec2.internal" | grep -v "^#" | awk  '
 status "TEST  $resolver $build_dir";
 echo $resolver > nginx/conf/.resolver;
 
-ruby $compile_buildpack_bin/get_service_url.rb > nginx/conf/.urls
-
 # Enable directory index
 if [[ "$(grep directory: Staticfile)X" != "X" ]]; then
   status "Enabling directory index for folders without index.html files"
