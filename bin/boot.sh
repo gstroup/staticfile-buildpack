@@ -15,7 +15,7 @@
 export APP_ROOT=$HOME
 export LD_LIBRARY_PATH=$APP_ROOT/nginx/lib:$LD_LIBRARY_PATH
 
-ruby get_service_url.rb > nginx/conf/.urls
+ruby get_service_url.rb > $APP_ROOT/nginx/conf/.urls
 
 source $APP_ROOT/nginx/conf/.urls
 
