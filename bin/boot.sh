@@ -13,6 +13,12 @@
 # and  limitations under the License.
 # ------------------------------------------------------------------------------------------------
 
+source $APP_ROOT/nginx/conf/.urls
+
+echo "test " $(cat $APP_ROOT/nginx/conf/.urls)
+
+
+
 export APP_ROOT=$HOME
 export LD_LIBRARY_PATH=$APP_ROOT/nginx/lib:$LD_LIBRARY_PATH
 
