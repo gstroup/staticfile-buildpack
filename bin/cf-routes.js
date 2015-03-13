@@ -10,7 +10,7 @@
             for (var instanceIndex in service) {
                 var instance = service[instanceIndex];
                 if (instance.name === serviceName) {
-                    return instance.credentials.url;
+                    return location.protocol+'//'+instance.credentials.url;
                 }
             }
         }
