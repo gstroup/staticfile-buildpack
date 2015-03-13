@@ -71,7 +71,11 @@ fi
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 
 #Create the cf-routes.js with the route information
-mkdir public/www;
+if [ ! -d public/www ]
+then
+  mkdir public/www;
+fi
+
 erb $compile_buildpack_bin/cf-routes.js > public/www/cf-routes.js
 
 # [[ -f public/Procfile ]] && mv public/Procfile .
