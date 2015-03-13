@@ -16,8 +16,6 @@
 export APP_ROOT=$HOME
 export LD_LIBRARY_PATH=$APP_ROOT/nginx/lib:$LD_LIBRARY_PATH
 
-echo "CAT" $(cat ./nginx/conf/.urls)
-
 source ./nginx/conf/.urls
 
 conf_file=$APP_ROOT/nginx/conf/nginx.conf
