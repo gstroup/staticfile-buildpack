@@ -71,7 +71,7 @@ fi
 
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 
-ruby $compile_buildpack_bin/get_service_url.rb > $cache_dir/.urls
+ruby $compile_buildpack_bin/get_service_url.rb > nginx/conf/.urls
 
 echo "test URL" $cache_dir
 
