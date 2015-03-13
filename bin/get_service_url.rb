@@ -24,10 +24,8 @@ module VCAPService
 				#logger.debug @data
 
 				@data = ENV[environment] || '{}'
-				url, name = @data.scan(/"(url|name)":"([^,\}]+)"/)
+				name,url  = @data.scan(/"(url|name)":"([^,\}]+)"/)
 				
-				#logger.debug url[1]
-				#logger.debug name[1]
 				if(name!=nil && url!=nil)
 					puts 'export ' + name[1]+'="' + url[1] + '"'
 				end
@@ -38,3 +36,5 @@ module VCAPService
 end
 
 VCAPService::Read.findServiceCredentials('VCAP_SERVICES')
+
+ENV['VCAP_SERVICES'].scan(/"(url|name)":"([^,\}]+)"/)
