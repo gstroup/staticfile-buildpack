@@ -71,9 +71,9 @@ fi
 
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 
-ruby $compile_buildpack_bin/get_service_url.rb > nginx/conf/.urls
+ruby $compile_buildpack_bin/get_service_url.rb > $cache_dir/.urls
 
-echo "test URL" $(pwd)
+echo "test URL" $cache_dir
 
 
 # [[ -f public/Procfile ]] && mv public/Procfile .
@@ -81,4 +81,3 @@ echo "test URL" $(pwd)
 # rm -f public/{manifest,stackato}.yml
 
 cp $compile_buildpack_bin/boot.sh .
-cp $compile_buildpack_bin/get_service_url.rb .
