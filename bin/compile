@@ -60,7 +60,6 @@ if [[ -f Staticfile.auth ]]; then
 fi
 
 resolver=$(cat /etc/resolv.conf | grep -v "ec2.internal" | grep -v "^#" | awk  '{print $NF}' | tr '\n' ' ')
-status "TEST  "$(env);
 echo $resolver > nginx/conf/.resolver;
 
 # Enable directory index
@@ -72,8 +71,6 @@ fi
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 
 ruby $compile_buildpack_bin/get_service_url.rb > nginx/conf/.urls
-
-echo "test URL" $cache_dir
 
 
 # [[ -f public/Procfile ]] && mv public/Procfile .
