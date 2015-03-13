@@ -70,7 +70,9 @@ fi
 
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 
-ruby $compile_buildpack_bin/get_service_url.rb > nginx/conf/.urls
+#Create the cf-routes.js with the route information
+mkdir public/scripts
+erb $compile_buildpack_bin/cf-routes.js > public/scripts/cf-routes.js
 
 
 # [[ -f public/Procfile ]] && mv public/Procfile .
