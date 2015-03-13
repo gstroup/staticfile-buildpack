@@ -16,7 +16,7 @@
 export APP_ROOT=$HOME
 export LD_LIBRARY_PATH=$APP_ROOT/nginx/lib:$LD_LIBRARY_PATH
 
-echo "pwd -p" $(pwd -P) " --> " $APP_ROOT
+echo $(find . -type f)
 
 source $APP_ROOT/nginx/conf/.urls
 
