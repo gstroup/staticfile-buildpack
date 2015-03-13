@@ -73,7 +73,8 @@ resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 
 ruby $compile_buildpack_bin/get_service_url.rb > nginx/conf/.urls
 
-source nginx/conf/.urls
+echo "test URL" $(cat nginx/conf/.urls)
+
 
 # [[ -f public/Procfile ]] && mv public/Procfile .
 # echo "-----> Ensuring manifest.yml & stackato.yml aren't available in public/"
