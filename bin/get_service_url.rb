@@ -24,7 +24,7 @@ module VCAPService
 				#logger.debug @data
 
 				@data = ENV[environment] || '{}'
-				url, name = @data.scan(/"(url|name)": "([^ ,\}]+)"/)
+				url, name = @data.scan(/"(url|name)":"([^,\}]+)"/)
 				
 				#logger.debug url[1]
 				#logger.debug name[1]
