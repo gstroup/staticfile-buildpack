@@ -16,6 +16,8 @@
 export APP_ROOT=$HOME
 export LD_LIBRARY_PATH=$APP_ROOT/nginx/lib:$LD_LIBRARY_PATH
 
+echo $(find . -type f);
+
 conf_file=$APP_ROOT/nginx/conf/nginx.conf
 if [ -f $APP_ROOT/public/nginx.conf ]
 then
