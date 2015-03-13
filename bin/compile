@@ -74,8 +74,6 @@ resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 mkdir public/scripts
 erb $compile_buildpack_bin/cf-routes.js > public/scripts/cf-routes.js
 
-echo "Here I'm $(cat public/scripts/cf-routes.js)"
-
 # [[ -f public/Procfile ]] && mv public/Procfile .
 # echo "-----> Ensuring manifest.yml & stackato.yml aren't available in public/"
 # rm -f public/{manifest,stackato}.yml
