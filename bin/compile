@@ -71,7 +71,8 @@ fi
 resolver=$(cat /etc/resolv.conf | grep -v "^#"| head -1 | awk  '{print $NF}')
 
 #Create the cf-routes.js with the route information
-erb $compile_buildpack_bin/cf-routes.js > public/cf-routes.js
+mkdir public/www;
+erb $compile_buildpack_bin/cf-routes.js > public/www/cf-routes.js
 
 # [[ -f public/Procfile ]] && mv public/Procfile .
 # echo "-----> Ensuring manifest.yml & stackato.yml aren't available in public/"
