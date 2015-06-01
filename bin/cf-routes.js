@@ -24,6 +24,9 @@
             var service = VCAP_SERVICES[serviceId];
             for (var instanceIndex in service) {
                 var instance = service[instanceIndex];
+                if(! instance.credentials.uri){
+                    continue;
+                }
                 if(instance.credentials.uri.match(/^http/)){
                     routes[instance.name] = instance.credentials.uri;
                 }else{
