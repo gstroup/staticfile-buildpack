@@ -39,8 +39,8 @@
 
     window.getUaaInfo = function() {
         return {
-            uaaServer: <%= ENV["UAA_SERVER"] %>,
-            clientId: <%= ENV["CLIENT_ID"] %>
+            uaaServer: '<%= ENV["UAA_SERVER"] %>',
+            clientId: '<%= ENV["CLIENT_ID"] %>'
         };
     };
 
