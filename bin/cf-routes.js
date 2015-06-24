@@ -37,4 +37,11 @@
         return routes;
     };
 
+    window.getUaaInfo = function() {
+        return {
+            uaaServer: <%= ENV["UAA_SERVER"] %>,
+            clientId: <%= ENV["CLIENT_ID"] %>
+        };
+    };
+
 })();
